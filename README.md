@@ -6,16 +6,19 @@
 
 `CDVImagePicker` uses ARC and requires iOS 7.0+. Works for iPhone and iPad
 
-##How to use
+##Installation
 
 ###Cocoapods
 
 ###Manual
 Drag CDVImagePickerController folder to your project 
 
+##How to use
+
+
 ## To Do
 
-- improve Usage section
+- write "How to use" section
 - implement DatabaseManager for storing and receiving images from storage
 - handling errors in ImagePicker
 - implement search image functionality
