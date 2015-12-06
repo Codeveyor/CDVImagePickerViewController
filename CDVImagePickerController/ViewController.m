@@ -31,12 +31,11 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
     {
         // setup of view container
         self.imagePickerViewController = (CDVImagePickerViewController *)[segue destinationViewController];
+        self.imagePickerViewController.delegate = self;
         
         // use one this methods if you want to fill imagePicker with existing image or searchText:
 //        [self.imagePickerViewController loadImagePickerWithImage:(nullable UIImage *)];
 //        [self.imagePickerViewController loadImagePickerWithImage:(nullable UIImage *) searchText:(nullable NSString *)];
-        
-        self.imagePickerViewController.delegate = self;
     }
 }
 

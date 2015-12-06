@@ -42,13 +42,13 @@ NS_ASSUME_NONNULL_BEGIN
  Loads imagePicker with existing image and text for search image in web.
  
  @param image Image for displaying if it is already exists.
- @param searchText Search request text to be used in Google Images API. Pass nil if not plan to use possibility to search image in web
+ @param searchText Search request text to be used in Google Images API. Pass nil if not plan to use possibility to search image in web, or just use previous method
  */
 - (void)loadImagePickerWithImage:(nullable UIImage *)image
                       searchText:(nullable NSString *)searchText;
 
 /**
- Loads imagePicker with existing image and text for search image in web.
+ Set imagePicker UI elements tintColor properties.
  
  @param imageViewTintColor Image tint color.
  @param imageViewTintColor Camera Button tint color.
