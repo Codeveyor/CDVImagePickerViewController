@@ -67,6 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 - (void)resetImage;
 - (void)setChosenImage:(nonnull UIImage *)image;
+- (void)imagePickerReturnedError:(NSError *)error;
 @end
 
 @protocol CDVImagePickerViewControllerActionsDelegate <NSObject>

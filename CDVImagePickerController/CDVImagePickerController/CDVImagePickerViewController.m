@@ -124,11 +124,14 @@
 - (IBAction)photoButtonDidPressed:(UIButton *)button
 {
     [self.actionsDelegate imagePickerButtonDidPressed:button];
-    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-#warning - handle error correctly
-
+        NSDictionary *errorDictionary = @{
+                                          NSLocalizedDescriptionKey : @"ERROR! Camera is not available at device",
+                                          NSLocalizedFailureReasonErrorKey : @"ERROR! Camera is not available at device"
+                                          };
+        NSError *error = [NSError errorWithDomain:@"error.com.codeveyor" code:0 userInfo:errorDictionary];
+        [self.delegate imagePickerReturnedError:error];
         return;
     }
     self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -139,11 +142,14 @@
 - (IBAction)mediaLibraryButtonDidPressed:(UIButton *)button
 {
     [self.actionsDelegate imagePickerButtonDidPressed:button];
-    
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
     {
-#warning - handle error correctly
-        
+        NSDictionary *errorDictionary = @{
+                                          NSLocalizedDescriptionKey : @"ERROR! Photo Library is not available at device",
+                                          NSLocalizedFailureReasonErrorKey : @"ERROR! Photo Library is not available at device"
+                                          };
+        NSError *error = [NSError errorWithDomain:@"error.com.codeveyor" code:0 userInfo:errorDictionary];
+        [self.delegate imagePickerReturnedError:error];
         return;
     }
     self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;

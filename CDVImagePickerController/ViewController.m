@@ -62,4 +62,12 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
     self.selectedImageView.image = image;
 }
 
+- (void)imagePickerReturnedError:(NSError *)error
+{
+    if (error)
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
 @end
