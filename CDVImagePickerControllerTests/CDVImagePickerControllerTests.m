@@ -70,4 +70,19 @@
     XCTAssertThrows(block());
 }
 
+- (void)testNilTintColorsToImageAndButtons
+{
+    [self.imagePickerController imageViewTintColor:nil
+                             cameraButtonTintColor:nil
+                              albumButtonTintColor:nil
+                              resetButtonTintColor:nil];
+    
+    void (^block)() = ^{
+        @throw [NSException exceptionWithName:NSGenericException
+                                       reason:@"Passed nil tint colors crashed app"
+                                     userInfo:nil];
+    };
+    XCTAssertThrows(block());
+}
+
 @end

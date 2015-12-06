@@ -55,10 +55,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param imageViewTintColor Album Button tint color.
  @param imageViewTintColor Reset Button tint color.
  */
-- (void)imageViewTintColor:(UIColor *)imageViewTintColor
-      cameraButtonTintColor:(UIColor *)cameraButtonTintColor
-      albumButtonTintColor:(UIColor *)albumButtonTintColor
-      resetButtonTintColor:(UIColor *)resetButtonTintColor;
+- (void)imageViewTintColor:(nullable UIColor *)imageViewTintColor
+      cameraButtonTintColor:(nullable UIColor *)cameraButtonTintColor
+      albumButtonTintColor:(nullable UIColor *)albumButtonTintColor
+      resetButtonTintColor:(nullable UIColor *)resetButtonTintColor;
 
 @end
 
