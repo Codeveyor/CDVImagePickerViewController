@@ -1,4 +1,4 @@
-[![](images/codeveyor_logo.jpg)](https://twitter.com/Codeveyor)
+[![](images/logo_codeveyor.jpg)](https://twitter.com/Codeveyor)
 
 ## CDVImagePicker v1.0
 
@@ -79,7 +79,6 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 ## To Do
 
 - implement DatabaseManager for storing and receiving images from storage
-- make test app icons
 - handling errors in ImagePicker
 - implement search image functionality
 - properties for customizing appearance
@@ -90,6 +89,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 
 ####Done
 - write "How to use" section
+- make test app icons
 
 ##License
 The MIT License (MIT). See `LICENSE` file for more details
