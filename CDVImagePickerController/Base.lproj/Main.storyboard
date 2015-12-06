@@ -93,7 +93,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="photoButtonDidPressed:" destination="sLi-0c-N4Z" eventType="touchUpInside" id="tCF-o9-vNX"/>
+                                    <action selector="cameraButtonDidPressed:" destination="sLi-0c-N4Z" eventType="touchUpInside" id="C4g-MZ-Yhg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cia-yG-KBr">
@@ -104,7 +104,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="mediaLibraryButtonDidPressed:" destination="sLi-0c-N4Z" eventType="touchUpInside" id="KaS-Rf-Imj"/>
+                                    <action selector="photoLibraryLibraryButtonDidPressed:" destination="sLi-0c-N4Z" eventType="touchUpInside" id="en8-BE-TyE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-uI-s5g">
@@ -140,9 +140,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="kwT-2V-Gw8" id="5Nf-nM-lrh"/>
                         <outlet property="imageView" destination="Vx2-fJ-yvT" id="pq9-Fo-wfF"/>
-                        <outlet property="mediaButton" destination="cia-yG-KBr" id="02b-sx-SDr"/>
-                        <outlet property="photoButton" destination="kwT-2V-Gw8" id="9AN-OB-QTf"/>
+                        <outlet property="photoLibraryButton" destination="cia-yG-KBr" id="iUn-DO-fF8"/>
                         <outlet property="resetButton" destination="Xhn-uI-s5g" id="vv9-0O-aJy"/>
                     </connections>
                 </viewController>

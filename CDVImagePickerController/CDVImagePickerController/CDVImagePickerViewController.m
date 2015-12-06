@@ -11,13 +11,13 @@
 @interface CDVImagePickerViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *imageView;
-@property (nonatomic, weak) IBOutlet UIButton *photoButton;
-@property (nonatomic, weak) IBOutlet UIButton *mediaButton;
+@property (nonatomic, weak) IBOutlet UIButton *cameraButton;
+@property (nonatomic, weak) IBOutlet UIButton *photoLibraryButton;
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 //@property (nonatomic, weak) IBOutlet UIButton *webButton;
 
 @property (nonatomic, strong) UIColor *imageTintColor;
-@property (nonatomic, strong) UIColor *photoButtonTintColor;
+@property (nonatomic, strong) UIColor *cameraButtonTintColor;
 @property (nonatomic, strong) UIColor *albumButtonTintColor;
 @property (nonatomic, strong) UIColor *resetButtonTintColor;
 
@@ -26,8 +26,8 @@
 
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 
-- (IBAction)photoButtonDidPressed:(UIButton *)button;
-- (IBAction)mediaLibraryButtonDidPressed:(UIButton *)button;
+- (IBAction)cameraButtonDidPressed:(UIButton *)button;
+- (IBAction)photoLibraryLibraryButtonDidPressed:(UIButton *)button;
 - (IBAction)resetButtonDidPressed:(UIButton *)button;
 //- (IBAction)webButtonDidPressed:(UIButton *)button;
 
@@ -45,17 +45,17 @@
     
     [super viewDidLoad];
     
-    [self.photoButton setTag:CDVImagePickerViewControllerButtonPhoto];
-    [self.photoButton setTitle:nil forState:UIControlStateNormal];
-    [self.photoButton setTintColor:[UIColor blackColor]];
-    [self.photoButton setImage:[UIImage imageNamed:@"photo"] forState:UIControlStateNormal];
+    [self.cameraButton setTag:CDVImagePickerViewControllerButtoncamera];
+    [self.cameraButton setTitle:nil forState:UIControlStateNormal];
+    [self.cameraButton setTintColor:[UIColor blackColor]];
+    [self.cameraButton setImage:[UIImage imageNamed:@"camera"] forState:UIControlStateNormal];
 
-    [self.photoButton setTag:CDVImagePickerViewControllerButtonAlbum];
-    [self.mediaButton setTitle:nil forState:UIControlStateNormal];
-    [self.mediaButton setTintColor:[UIColor blackColor]];
-    [self.mediaButton setImage:[UIImage imageNamed:@"album"] forState:UIControlStateNormal];
+    [self.cameraButton setTag:CDVImagePickerViewControllerButtonAlbum];
+    [self.photoLibraryButton setTitle:nil forState:UIControlStateNormal];
+    [self.photoLibraryButton setTintColor:[UIColor blackColor]];
+    [self.photoLibraryButton setImage:[UIImage imageNamed:@"photo_library"] forState:UIControlStateNormal];
     
-    [self.photoButton setTag:CDVImagePickerViewControllerButtonReset];
+    [self.cameraButton setTag:CDVImagePickerViewControllerButtonReset];
     [self.resetButton setTitle:nil forState:UIControlStateNormal];
     [self.resetButton setTintColor:[UIColor blackColor]];
     [self.resetButton setImage:[UIImage imageNamed:@"remove"] forState:UIControlStateNormal];
@@ -97,7 +97,7 @@
 }
 
 - (void)imageViewTintColor:(UIColor *)imageViewTintColor
-      photoButtonTintColor:(UIColor *)photoButtonTintColor
+      cameraButtonTintColor:(UIColor *)cameraButtonTintColor
       albumButtonTintColor:(UIColor *)albumButtonTintColor
       resetButtonTintColor:(UIColor *)resetButtonTintColor
 {
@@ -105,13 +105,13 @@
     {
         self.imageView.tintColor = imageViewTintColor;
     }
-    if (photoButtonTintColor)
+    if (cameraButtonTintColor)
     {
-        self.photoButton.tintColor = photoButtonTintColor;
+        self.cameraButton.tintColor = cameraButtonTintColor;
     }
     if (albumButtonTintColor)
     {
-        self.mediaButton.tintColor = albumButtonTintColor;
+        self.photoLibraryButton.tintColor = albumButtonTintColor;
     }
     if (resetButtonTintColor)
     {
@@ -121,7 +121,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)photoButtonDidPressed:(UIButton *)button
+- (IBAction)cameraButtonDidPressed:(UIButton *)button
 {
     [self.actionsDelegate imagePickerButtonDidPressed:button];
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
@@ -139,14 +139,14 @@
     [self presentViewController:self.imagePickerController animated:YES completion:NULL];
 }
 
-- (IBAction)mediaLibraryButtonDidPressed:(UIButton *)button
+- (IBAction)photoLibraryLibraryButtonDidPressed:(UIButton *)button
 {
     [self.actionsDelegate imagePickerButtonDidPressed:button];
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
     {
         NSDictionary *errorDictionary = @{
-                                          NSLocalizedDescriptionKey : @"ERROR! Photo Library is not available at device",
-                                          NSLocalizedFailureReasonErrorKey : @"ERROR! Photo Library is not available at device"
+                                          NSLocalizedDescriptionKey : @"ERROR! camera Library is not available at device",
+                                          NSLocalizedFailureReasonErrorKey : @"ERROR! camera Library is not available at device"
                                           };
         NSError *error = [NSError errorWithDomain:@"error.com.codeveyor" code:0 userInfo:errorDictionary];
         [self.delegate imagePickerReturnedError:error];
@@ -165,8 +165,8 @@
     self.imageView.image = [UIImage imageNamed:@"empty_image"];
     [self.delegate resetImage];
     
-    [self.photoButton setTintColor:[UIColor blackColor]];
-    [self.mediaButton setTintColor:[UIColor blackColor]];
+    [self.cameraButton setTintColor:[UIColor blackColor]];
+    [self.photoLibraryButton setTintColor:[UIColor blackColor]];
     [self.resetButton setTintColor:[UIColor blackColor]];
 }
 
@@ -178,13 +178,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
     self.image = chosenImage;
     self.imageView.image = chosenImage;
-    [self.delegate setChosenImage:chosenImage];
+    [self.delegate imageDidSelected:chosenImage];
     
-    [self.photoButton setTintColor:[UIColor whiteColor]];
-    [self.mediaButton setTintColor:[UIColor whiteColor]];
+    [self.cameraButton setTintColor:[UIColor whiteColor]];
+    [self.photoLibraryButton setTintColor:[UIColor whiteColor]];
     [self.resetButton setTintColor:[UIColor whiteColor]];
 
-    [self.actionsDelegate imagePickerDidFinishPickingMediaWithInfo];
+    [self.actionsDelegate imagePickerDidFinishPickingPhotoLibraryWithInfo];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -1,21 +1,21 @@
 [![](images/logo_codeveyor.jpg)](https://twitter.com/Codeveyor)
 
-## CDVImagePicker v1.0
+## CDVImagePickerViewController v1.0
 
-`CDVImagePicker` is a fully customizable image picker written in Objective-C. Subclassed from UIViewController
+`CDVImagePickerViewController` is a fully customizable image picker written in Objective-C. Subclassed from UIViewController
 
 [![](images/preview.png)](http://codeveyor.com)
 
 ## Requirements
 
-`CDVImagePicker` uses ARC and requires iOS 7.0+. Works for iPhone and iPad
+`CDVImagePickerViewController` uses ARC and requires iOS 7.0+. Works for iPhone and iPad
 
 ##Installation
 
 ###Cocoapods
 
 ###Manual
-Drag CDVImagePickerController folder to your project 
+Drag CDVImagePickerViewControllerController folder to your project 
 
 ##How to use
 1.Find Container View at the list of available UI elements in Interface Builder
@@ -43,8 +43,8 @@ You will see that actual container created and connectied view scene with Embed 
 6.Subscribe to delegate in your ViewController and define Embed Segue saw before in Storyboard. Use the delegate methods
 
 ``` objective-c
-@interface ViewController () <CDVImagePickerViewControllerDelegate>
-@property (nonatomic, strong) CDVImagePickerViewController *imagePickerViewController;
+@interface ViewController () <CDVImagePickerViewControllerViewControllerDelegate>
+@property (nonatomic, strong) CDVImagePickerViewControllerViewController *imagePickerViewController;
 @end
 
 static NSString * const kImagePickerSegue = @"toImagePicker";
@@ -56,7 +56,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
     if ([segue.identifier isEqualToString:kImagePickerSegue])
     {
         // setup of view container
-        self.imagePickerViewController = (CDVImagePickerViewController *)[segue destinationViewController];
+        self.imagePickerViewController = (CDVImagePickerViewControllerViewController *)[segue destinationViewController];
         self.imagePickerViewController.delegate = self;
     }
 }
@@ -68,7 +68,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
     // code for resetting image
 }
 
-- (void)setChosenImage:(nonnull UIImage *)image
+- (void)imageDidSelected:(UIImage *)image
 {
     // code for getting image
 }
@@ -87,9 +87,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 ## To Do
 
 - implement DatabaseManager for storing and receiving images from storage
-- handling errors in ImagePicker
 - implement search image functionality
-- properties for customizing appearance
 - callback blocks
 - improve test coverage
 - add pod
@@ -98,6 +96,8 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 ####Done
 - write "How to use" section
 - make test app icons
+- properties for customizing appearance
+- handling errors in ImagePicker
 
 ##License
 The MIT License (MIT). See `LICENSE` file for more details

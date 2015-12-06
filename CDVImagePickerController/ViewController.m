@@ -56,7 +56,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
     }];
 }
 
-- (void)setChosenImage:(nonnull UIImage *)image
+- (void)imageDidSelected:(nonnull UIImage *)image
 {
     self.actionLabel.text = NSLocalizedString(@"New image selected!", nil);
     self.selectedImageView.image = image;

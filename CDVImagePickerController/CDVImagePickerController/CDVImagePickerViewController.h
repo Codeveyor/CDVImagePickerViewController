@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, CDVImagePickerViewControllerButton) {
-    CDVImagePickerViewControllerButtonPhoto = 1,
+    CDVImagePickerViewControllerButtoncamera = 1,
     CDVImagePickerViewControllerButtonAlbum = 2,
     CDVImagePickerViewControllerButtonReset = 3
 };
@@ -31,7 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <CDVImagePickerViewControllerDelegate> delegate;
 @property (nonatomic, weak) id <CDVImagePickerViewControllerActionsDelegate> actionsDelegate;
 
-
 /**
  Loads imagePicker with existing image.
  
@@ -52,12 +51,12 @@ NS_ASSUME_NONNULL_BEGIN
  Loads imagePicker with existing image and text for search image in web.
  
  @param imageViewTintColor Image tint color.
- @param imageViewTintColor Photo Button tint color.
+ @param imageViewTintColor Camera Button tint color.
  @param imageViewTintColor Album Button tint color.
  @param imageViewTintColor Reset Button tint color.
  */
 - (void)imageViewTintColor:(UIColor *)imageViewTintColor
-      photoButtonTintColor:(UIColor *)photoButtonTintColor
+      cameraButtonTintColor:(UIColor *)cameraButtonTintColor
       albumButtonTintColor:(UIColor *)albumButtonTintColor
       resetButtonTintColor:(UIColor *)resetButtonTintColor;
 
@@ -66,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol CDVImagePickerViewControllerDelegate <NSObject>
 @required
 - (void)resetImage;
-- (void)setChosenImage:(nonnull UIImage *)image;
+- (void)imageDidSelected:(nonnull UIImage *)image;
 - (void)imagePickerReturnedError:(NSError *)error;
 @end
 
@@ -74,7 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 - (void)imagePickerDidTapped;
 - (void)imagePickerButtonDidPressed:(nonnull UIButton *)button;
-- (void)imagePickerDidFinishPickingMediaWithInfo;
+- (void)imagePickerDidFinishPickingPhotoLibraryWithInfo;
 - (void)imagePickerDidCancel;
 @end
 
