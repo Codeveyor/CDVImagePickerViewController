@@ -73,6 +73,10 @@
         <scene sceneID="dUO-V0-QYK">
             <objects>
                 <viewController id="sLi-0c-N4Z" customClass="CDVImagePickerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MgM-ID-MlW"/>
+                        <viewControllerLayoutGuide type="bottom" id="zsj-7B-L6A"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dBP-fI-DaN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
