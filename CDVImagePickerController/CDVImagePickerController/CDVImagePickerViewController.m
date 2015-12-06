@@ -16,6 +16,10 @@
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 //@property (nonatomic, weak) IBOutlet UIButton *webButton;
 
+@property (nonatomic, strong) UIColor *imageTintColor;
+@property (nonatomic, strong) UIColor *photoButtonTintColor;
+@property (nonatomic, strong) UIColor *albumButtonTintColor;
+@property (nonatomic, strong) UIColor *resetButtonTintColor;
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, copy) NSString *searchText;
@@ -89,6 +93,29 @@
     if (searchText)
     {
         self.searchText = searchText;
+    }
+}
+
+- (void)imageViewTintColor:(UIColor *)imageViewTintColor
+      photoButtonTintColor:(UIColor *)photoButtonTintColor
+      albumButtonTintColor:(UIColor *)albumButtonTintColor
+      resetButtonTintColor:(UIColor *)resetButtonTintColor
+{
+    if (imageViewTintColor)
+    {
+        self.imageView.tintColor = imageViewTintColor;
+    }
+    if (photoButtonTintColor)
+    {
+        self.photoButton.tintColor = photoButtonTintColor;
+    }
+    if (albumButtonTintColor)
+    {
+        self.mediaButton.tintColor = albumButtonTintColor;
+    }
+    if (resetButtonTintColor)
+    {
+        self.resetButton.tintColor = albumButtonTintColor;
     }
 }
 

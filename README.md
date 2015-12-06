@@ -36,7 +36,7 @@ You will see that actual container created and connectied view scene with Embed 
 
 [![](images/4.constrain_view.png)](http://codeveyor.com)
 
-5.Don't forget to set outlets and connections
+5.Don't forget to set outlets and actions
 
 [![](images/5.set_outlets.png)](http://codeveyor.com)
 

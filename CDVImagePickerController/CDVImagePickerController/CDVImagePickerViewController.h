@@ -31,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id <CDVImagePickerViewControllerDelegate> delegate;
 @property (nonatomic, weak) id <CDVImagePickerViewControllerActionsDelegate> actionsDelegate;
 
+
 /**
  Loads imagePicker with existing image.
  
@@ -46,6 +47,19 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)loadImagePickerWithImage:(nullable UIImage *)image
                       searchText:(nullable NSString *)searchText;
+
+/**
+ Loads imagePicker with existing image and text for search image in web.
+ 
+ @param imageViewTintColor Image tint color.
+ @param imageViewTintColor Photo Button tint color.
+ @param imageViewTintColor Album Button tint color.
+ @param imageViewTintColor Reset Button tint color.
+ */
+- (void)imageViewTintColor:(UIColor *)imageViewTintColor
+      photoButtonTintColor:(UIColor *)photoButtonTintColor
+      albumButtonTintColor:(UIColor *)albumButtonTintColor
+      resetButtonTintColor:(UIColor *)resetButtonTintColor;
 
 @end
 
