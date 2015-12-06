@@ -72,6 +72,14 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 {
     // code for getting image
 }
+
+- (void)imagePickerReturnedError:(NSError *)error
+{
+    if (error)
+    {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
 ```
 
 7.Enjoy!
