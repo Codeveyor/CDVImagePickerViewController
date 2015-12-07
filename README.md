@@ -86,18 +86,16 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 
 ## To Do
 
-- implement DatabaseManager for storing and receiving images from storage
 - implement search image functionality
 - callback blocks
 - improve test coverage
 - add pod
 - make a Swift version
 
-####Done
-- write "How to use" section
-- make test app icons
-- properties for customizing appearance
-- handling errors in ImagePicker
+## Contact
+
+[Alex](https://github.com/alexth)
+
 
 ##License
 The MIT License (MIT). See `LICENSE` file for more details
