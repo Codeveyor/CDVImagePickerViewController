@@ -15,7 +15,7 @@
 ###Cocoapods
 
 ###Manual
-Drag CDVImagePickerViewControllerController folder to your project 
+Drag CDVImagePickerViewController folder to your project 
 
 ##How to use
 1.Find Container View at the list of available UI elements in Interface Builder
@@ -26,9 +26,9 @@ Drag CDVImagePickerViewControllerController folder to your project
 
 [![](images/2.drag_container.png)](http://codeveyor.com)
 
-You will see that actual container created and connectied view scene with Embed Segue. Give a name for a segue
+You will see that actual container created and connected to view scene with Embed Segue. Give a name for a segue
 
-3.Set container class at Identity Inspector tab
+3.Set container class as `CDVImagePickerViewController` at Identity Inspector tab
 
 [![](images/3.set_container_class.png)](http://codeveyor.com)
 
@@ -86,6 +86,7 @@ static NSString * const kImagePickerSegue = @"toImagePicker";
 
 ## To Do
 
+- improve custom interface to capturing from camera
 - implement search image functionality
 - callback blocks
 - improve test coverage
